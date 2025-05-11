@@ -16,7 +16,7 @@ The project was based on an extensive data set of real home sales in Ames, Iowa,
 The classification part of the project is structured in a pipeline approach, starting with data preprocessing and ending with the model evaluation.
 
 
-1. Data Preprocessing
+#### 1. Data Preprocessing
 
 First, a feature selection step is applied to reduce noise and improve model interpretability. Missing values are handled using a SimpleImputer.
 Next, the data is divided into numerical and categorical features since they are processed in different sub-pipelines. For encoding categorical data, two types of encoders are used:
@@ -26,10 +26,10 @@ Next, the data is divided into numerical and categorical features since they ar
 
 All preprocessing steps are combined using a ColumnTransformer.
 
-2. Random Forest Classifier
+#### 2. Random Forest Classifier
 The preprocessed data is then passed to a Random Forest Classifier which works by building multiple decision trees and aggregating their predictions.
 
-3. Hyperparameter tuning
+#### 3. Hyperparameter tuning
 To optimize model performance, a Randomized Search Cross-Validation (`RandomizedSearchCV`) is used. 
 Tuned parameter:
 - `n_estimators` (number of trees in the forest)
@@ -38,5 +38,5 @@ Tuned parameter:
 - `min_samples_leaf` (minimum number of samples required to be at a leaf node)
 - `ccp_alpha` (cost complexity pruning parameter)
 
-3. Evaluation
+#### 4. Evaluation
 After training the model on the training data with the best parameters, the model is used to predict the housing prices for the unseen test set, with the accuracy of this prediction expressed through the accuracy score.
