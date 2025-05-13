@@ -40,3 +40,12 @@ Tuned parameter:
 
 #### 4. Evaluation
 After training the model on the training data with the best parameters, the model is used to predict the housing prices for the unseen test set, with the accuracy of this prediction expressed through the accuracy score.
+
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true">
+    <img alt="Schema Diagramm" src="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true" width="100%">
+  </picture>
+</div>
