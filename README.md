@@ -46,6 +46,6 @@ After training the model on the training data with the best parameters, the mode
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true">
     <source media="(prefers-color-scheme: light)" srcset="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true">
-    <img alt="Schema Diagramm" src="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true" width="80%">
+    <img alt="Schema Diagramm" src="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true" width="70%">
   </picture>
 </div>
