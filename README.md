@@ -49,3 +49,35 @@ After training the model on the training data with the best parameters, the mode
     <img alt="Schema Diagramm" src="https://github.com/acejolanda/supervised_housing/blob/main/pipeline.png?raw=true" width="70%">
   </picture>
 </div>
+
+## Regression
+
+To predict the exact sales prices of the houses data set, a modular pipeline approach is chosen as well:
+
+#### 1. Feature Engineering and Data Preprocessing
+
+
+First, additional features are added on top of the features already selected in the classification, such as “TotalSF,” which is the sum of all individual surfaces.
+
+First, a feature selection step is applied to reduce noise and improve model interpretability. Missing values are handled using a SimpleImputer.
+Next, the data is divided into numerical and categorical features since they are processed in different sub-pipelines. For encoding categorical data, two types of encoders are used:
+
+- ordinal encoder: for ordered features like condition or quality (e.g. `Ex`, `Gd`, `TA`, ... → mapped to 5 → 4 → 3, etc.)
+- One-Hot Encoding for nominal, unordered features (e.g. neighborhood, building type)
+
+All preprocessing steps are combined using a ColumnTransformer.
+
+#### 2. Random Forest Classifier
+The preprocessed data is then passed to a Random Forest Classifier which works by building multiple decision trees and aggregating their predictions.
+
+#### 3. Hyperparameter tuning
+To optimize model performance, a Randomized Search Cross-Validation (`RandomizedSearchCV`) is used. 
+Tuned parameter:
+- `n_estimators` (number of trees in the forest)
+- `max_depth` (maximum depth of each tree)
+- `min_samples_split` (minimum number of samples required to split an internal node)
+- `min_samples_leaf` (minimum number of samples required to be at a leaf node)
+- `ccp_alpha` (cost complexity pruning parameter)
+
+#### 4. Evaluation
+After training the model on the training data with the best parameters, the model is used to predict the housing prices for the unseen test set, with the accuracy of this prediction expressed through the accuracy score.
